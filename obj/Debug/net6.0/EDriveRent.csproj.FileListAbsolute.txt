@@ -1,0 +1,15 @@
+C:\Users\steve\source\repos\OOPExamPreparation05\bin\Debug\net6.0\EDriveRent.exe
+C:\Users\steve\source\repos\OOPExamPreparation05\bin\Debug\net6.0\EDriveRent.deps.json
+C:\Users\steve\source\repos\OOPExamPreparation05\bin\Debug\net6.0\EDriveRent.runtimeconfig.json
+C:\Users\steve\source\repos\OOPExamPreparation05\bin\Debug\net6.0\EDriveRent.dll
+C:\Users\steve\source\repos\OOPExamPreparation05\bin\Debug\net6.0\EDriveRent.pdb
+C:\Users\steve\source\repos\OOPExamPreparation05\obj\Debug\net6.0\EDriveRent.csproj.AssemblyReference.cache
+C:\Users\steve\source\repos\OOPExamPreparation05\obj\Debug\net6.0\EDriveRent.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\steve\source\repos\OOPExamPreparation05\obj\Debug\net6.0\EDriveRent.AssemblyInfoInputs.cache
+C:\Users\steve\source\repos\OOPExamPreparation05\obj\Debug\net6.0\EDriveRent.AssemblyInfo.cs
+C:\Users\steve\source\repos\OOPExamPreparation05\obj\Debug\net6.0\EDriveRent.csproj.CoreCompileInputs.cache
+C:\Users\steve\source\repos\OOPExamPreparation05\obj\Debug\net6.0\EDriveRent.dll
+C:\Users\steve\source\repos\OOPExamPreparation05\obj\Debug\net6.0\refint\EDriveRent.dll
+C:\Users\steve\source\repos\OOPExamPreparation05\obj\Debug\net6.0\EDriveRent.pdb
+C:\Users\steve\source\repos\OOPExamPreparation05\obj\Debug\net6.0\EDriveRent.genruntimeconfig.cache
+C:\Users\steve\source\repos\OOPExamPreparation05\obj\Debug\net6.0\ref\EDriveRent.dll
