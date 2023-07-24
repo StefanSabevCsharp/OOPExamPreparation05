@@ -2,20 +2,20 @@
 using EDriveRent.Models;
 using EDriveRent.Models.Contracts;
 using EDriveRent.Repositories;
+using EDriveRent.Repositories.Contracts;
 using EDriveRent.Utilities.Messages;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace EDriveRent.Core
 {
     public class Controller : IController
     {
-        private UserRepository userRepository;
-        private VehicleRepository vehicleRepository;
-        private RouteRepository routeRepository;
+
+        private IRepository<IUser> userRepository;
+        private IRepository<IVehicle> vehicleRepository;
+        private IRepository<IRoute> routeRepository;
         public Controller()
         {
             userRepository = new UserRepository();
@@ -86,7 +86,7 @@ namespace EDriveRent.Core
                 longerRoute.LockRoute();
 
             }
-                return $"{string.Format(OutputMessages.NewRouteAdded, startPoint, endPoint, length)}";
+            return $"{string.Format(OutputMessages.NewRouteAdded, startPoint, endPoint, length)}";
 
         }
 
@@ -95,7 +95,7 @@ namespace EDriveRent.Core
             IUser user = userRepository.FindById(drivingLicenseNumber);
             if (user.IsBlocked)
             {
-                return $"{string.Format(OutputMessages.UserBlocked,drivingLicenseNumber)}";
+                return $"{string.Format(OutputMessages.UserBlocked, drivingLicenseNumber)}";
             }
             IVehicle vehicle = vehicleRepository.FindById(licensePlateNumber);
             if (vehicle.IsDamaged)
@@ -108,7 +108,7 @@ namespace EDriveRent.Core
                 return $"{string.Format(OutputMessages.RouteLocked, routeId)}";
             }
             vehicle.Drive(route.Length);
-            if(isAccidentHappened)
+            if (isAccidentHappened)
             {
                 vehicle.ChangeStatus();
                 user.DecreaseRating();
@@ -129,7 +129,7 @@ namespace EDriveRent.Core
                 .OrderBy(v => v.Model)
                 .Take(count);
             int countOfDamagedVehicles = damagedVehicles.Count();
-            foreach(IVehicle vehicle in damagedVehicles)
+            foreach (IVehicle vehicle in damagedVehicles)
             {
                 vehicle.ChangeStatus();
                 vehicle.Recharge();
@@ -149,12 +149,12 @@ namespace EDriveRent.Core
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("*** E-Drive-Rent ***");
 
-            foreach(IUser user in users)
+            foreach (IUser user in users)
             {
                 sb.AppendLine(user.ToString());
             }
             return sb.ToString().TrimEnd();
-                
+
         }
     }
 }

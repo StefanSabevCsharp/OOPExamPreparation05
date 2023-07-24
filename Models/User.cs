@@ -13,14 +13,15 @@ namespace EDriveRent.Models
         private string firstName;
         private string lastName;
         private string drivingLicenseNumber;
-        
+        private double rating;
+        private bool isBlocked;
         public User(string firstName,string lastName,string drivingLicenseNumber)
         {
             FirstName = firstName;
             LastName = lastName;
             DrivingLicenseNumber = drivingLicenseNumber;
-            Rating = 0;
-            IsBlocked = false;
+            this.rating = 0;
+            this.isBlocked = false;
         }
         public string FirstName
         {
@@ -48,7 +49,7 @@ namespace EDriveRent.Models
             }
         }
 
-        public double Rating {get;private set;}
+        public double Rating => this.rating;
 
         public string DrivingLicenseNumber
         {
@@ -63,24 +64,24 @@ namespace EDriveRent.Models
             }
         }
 
-        public bool IsBlocked {get;private set;}
+        public bool IsBlocked => this.isBlocked;
 
         public void DecreaseRating()
         {
-            Rating -= 2;
-            if (Rating < 0)
+            rating -= 2;
+            if (rating < 0)
             {
-                Rating = 0;
-                IsBlocked = true;
+                rating = 0;
+                isBlocked = true;
             }
         }
 
         public void IncreaseRating()
         {
-            Rating += 0.5;
-            if(Rating >= 10)
+            rating += 0.5;
+            if(rating >= 10)
             {
-                Rating = 10;
+                rating = 10;
             }
         }
 
